@@ -1,10 +1,10 @@
 using System;
 
-namespace WestCoastEducation2.Models;
+namespace WestCoastEducationClient.Client.Models;
 
 public class DistanceCourse : Course
 {
-    public string MeetingLink {get; set;}
+    public string MeetingLink { get; set; }
 
     public DistanceCourse(
         string courseNumber,
@@ -13,9 +13,9 @@ public class DistanceCourse : Course
         DateTime startDate,
         DateTime endDate,
         string meetingLink)
-        :base (courseNumber, title, durationDays, startDate, endDate)
+        : base(courseNumber, title, durationDays, startDate, endDate)
     {
-        MeetingLink=meetingLink;
+        MeetingLink = meetingLink;
     }
     public override string GetInfo()
     {

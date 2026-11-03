@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 
-namespace WestCoastEducation2.Models;
+
+namespace WestCoastEducationClient.Client.Models;
 
 public class Teacher : Person
 {
@@ -34,10 +36,10 @@ public class Teacher : Person
     public override string GetInfo()
     {
         string courses = "";
-        
-        if (ResponsibleCourses.Count== 0)
+
+        if (ResponsibleCourses.Count == 0)
         {
-            courses ="none";
+            courses = "none";
 
         }
         else

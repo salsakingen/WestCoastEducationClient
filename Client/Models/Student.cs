@@ -1,6 +1,7 @@
 using System;
+using System.Collections.Generic;
 
-namespace WestCoastEducation2.Models;
+namespace WestCoastEducationClient.Client.Models;
 
 public class Student : Person
 {

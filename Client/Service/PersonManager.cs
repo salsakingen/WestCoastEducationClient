@@ -1,6 +1,8 @@
-using WestCoastEducation2.Models;
+using System;
+using System.Collections.Generic;
+using WestCoastEducationClient.Client.Models;
 
-namespace WestCoastEducation2.Services;
+namespace WestCoastEducationClient.Client.Service;
 
 public class PersonManager
 {

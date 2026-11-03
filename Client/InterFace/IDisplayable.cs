@@ -1,8 +1,8 @@
 using System;
 
-namespace WestCoastEducation2.InterFaces;
+namespace WestCoastEducationClient.Client.InterFace;
 
 public interface IDisplayable
 {
-string GetInfo ();
+    string GetInfo();
 }

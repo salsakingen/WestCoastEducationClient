@@ -1,6 +1,7 @@
-using WestCoastEducation2.InterFaces;
+using System;
+using WestCoastEducationClient.Client.InterFace;
 
-namespace WestCoastEducation2.Models;
+namespace WestCoastEducationClient.Client.Models;
 
 public abstract class Course : IDisplayable
 {

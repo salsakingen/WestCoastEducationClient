@@ -1,10 +1,10 @@
 using System;
 
-namespace WestCoastEducation2.Models;
+namespace WestCoastEducationClient.Client.Models;
 
 public class EducationLeader : Teacher
 {
-  public DateTime EmploymentDate { get; set; }
+    public DateTime EmploymentDate { get; set; }
 
 
     public EducationLeader(
@@ -20,7 +20,7 @@ public class EducationLeader : Teacher
 
     : base(firstName, lastName, phone, personalNumber, address, postalCode, city, knowledgeArea)
     {
-       EmploymentDate = employmentDate;
+        EmploymentDate = employmentDate;
     }
     public override string GetInfo()
     {
