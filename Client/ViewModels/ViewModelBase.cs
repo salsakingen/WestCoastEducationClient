@@ -1,7 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace WestCoastEducationClient.ViewModels;
+namespace WestCoastEducationClient.Client.ViewModels;
 
-public abstract class ViewModelBase : ObservableObject
+public partial class ViewModelBase : ObservableObject
 {
+    [ObservableProperty]
+    public partial string PageTitle { get; set; }
 }

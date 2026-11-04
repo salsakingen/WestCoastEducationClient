@@ -1,10 +1,9 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using WestCoastEducationClient.ViewModels;
-using WestCoastEducationClient.Views;
-
-namespace WestCoastEducationClient;
+using WestCoastEducationClient.Client.ViewModels;
+using WestCoastEducationClient.Client.Views;
+namespace WestCoastEducationClient.Client;
 
 public partial class App : Application
 {

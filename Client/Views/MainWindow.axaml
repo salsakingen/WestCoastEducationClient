@@ -1,22 +1,47 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:WestCoastEducationClient.ViewModels"
+        xmlns:vm="using:WestCoastEducationClient.Client.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="WestCoastEducationClient.Views.MainWindow"
+        x:Class="WestCoastEducationClient.Client.Views.MainWindow"
         x:DataType="vm:MainViewModel"
-        Icon="/Assets/avalonia-logo.ico"
         Title="WestCoastEducationClient">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainViewModel />
+        <vm:MainViewModel/>
     </Design.DataContext>
 
-    <TextBox Text="{Binding Greeting}"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center" />
+    <Grid ColumnDefinitions="Auto,*" Background="White">
+        <Border Padding="10" Background="Black" >
+            <Grid RowDefinitions="*, Auto">
+                <Button Command="{Binding GoToHomeCommand}">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
 
+                    </StackPanel>
+
+                </Button>
+                <Button Command="{Binding GoToTeacherCommand}">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+
+                    </StackPanel>
+
+                </Button>
+                <Button Command="{Binding GoToStudentCommand}">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+
+                    </StackPanel>
+
+                </Button>
+                <Button Command="{Binding GoToCoursesCommand}">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+
+                    </StackPanel>
+
+                </Button>
+            </Grid>
+        </Border>
+
+        <ContentControl Grid.Column="1" Padding="20" Content="{Binding CurrentView}"/>
+    </Grid>
 </Window>

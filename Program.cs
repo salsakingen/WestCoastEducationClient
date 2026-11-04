@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace WestCoastEducationClient;
+namespace WestCoastEducationClient.Client;
 
 sealed class Program
 {
