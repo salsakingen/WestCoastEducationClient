@@ -10,6 +10,6 @@
     <vm:HomeViewModel />
   </Design.DataContext>
   <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-    <TextBlock Text="Welcome to West Coast Education Admin" FontSize="24" />
+    <TextBlock  Foreground="White" Text="Welcome to West Coast Education Admin"  FontSize="24" />
   </StackPanel>
 </UserControl>

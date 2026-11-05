@@ -5,5 +5,5 @@ namespace WestCoastEducationClient.Client.ViewModels;
 public partial class ViewModelBase : ObservableObject
 {
     [ObservableProperty]
-    public partial string PageTitle { get; set; }
+    public partial string PageTitle { get; set; } = "";
 }

@@ -4,7 +4,7 @@ using WestCoastEducationClient.Client.Models;
 
 namespace WestCoastEducationClient.Client.Service
 {
-    public class CourseManager
+    public class CourseService
     {
         private readonly List<Course> _courses = new List<Course>();
 

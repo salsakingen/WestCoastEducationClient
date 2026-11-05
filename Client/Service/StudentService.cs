@@ -4,14 +4,10 @@ using WestCoastEducationClient.Client.Models;
 
 namespace WestCoastEducationClient.Client.Service;
 
-public class PersonManager
+public class StudentService
 {
     private readonly List<Student> _students = [];
-    private readonly List<Teacher> _teachers = [];
-    private readonly List<EducationLeader> _leaders = [];
-    private readonly List<Admin> _admins = [];
 
-    // En gemensam kontroll för alla persontyper, så att den inte upprepas.
     private static bool AddUnique<T>(List<T> list, T person) where T : Person
     {
         foreach (T existing in list)
@@ -25,11 +21,7 @@ public class PersonManager
         list.Add(person);
         return true;
     }
-
     public bool AddStudent(Student student) => AddUnique(_students, student);
-    public bool AddTeacher(Teacher teacher) => AddUnique(_teachers, teacher);
-    public bool AddEducationLeader(EducationLeader leader) => AddUnique(_leaders, leader);
-    public bool AddAdmin(Admin admin) => AddUnique(_admins, admin);
 
     public void ListStudents()
     {

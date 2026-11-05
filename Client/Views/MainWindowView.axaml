@@ -12,36 +12,32 @@
         <vm:MainViewModel/>
     </Design.DataContext>
 
-    <Grid ColumnDefinitions="Auto,*" Background="White">
-        <Border Padding="10" Background="Black" >
-            <Grid RowDefinitions="*, Auto">
+    <Grid ColumnDefinitions="Auto,*">
+        <Border Grid.Column="0" Padding="10" Background="Blue">
+            <StackPanel Spacing="10">
                 <Button Command="{Binding GoToHomeCommand}">
                     <StackPanel Orientation="Horizontal" Spacing="10">
-
+                        <Label Content="Home" Foreground="White" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
-
                 </Button>
-                <Button Command="{Binding GoToTeacherCommand}">
+                <Button Background="Purple" Command="{Binding GoToTeacherCommand}">
                     <StackPanel Orientation="Horizontal" Spacing="10">
-
+                        <Label Content="Teacher" Foreground="White" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
-
                 </Button>
-                <Button Command="{Binding GoToStudentCommand}">
+                <Button Background="Green" Command="{Binding GoToStudentCommand}">
                     <StackPanel Orientation="Horizontal" Spacing="10">
-
+                        <Label Content="Student" Foreground="White" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
-
                 </Button>
-                <Button Command="{Binding GoToCoursesCommand}">
+                <Button Background="Orange" Command="{Binding GoToCoursesCommand}">
                     <StackPanel Orientation="Horizontal" Spacing="10">
-
+                        <Label Content="Courses" Foreground="White" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
-
                 </Button>
-            </Grid>
+            </StackPanel>
         </Border>
-
         <ContentControl Grid.Column="1" Padding="20" Content="{Binding CurrentView}"/>
     </Grid>
 </Window>
+

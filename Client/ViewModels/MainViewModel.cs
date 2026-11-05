@@ -9,7 +9,7 @@ namespace WestCoastEducationClient.Client.ViewModels;
 public partial class MainViewModel : ViewModelBase
 {
     [ObservableProperty]
-    public partial ViewModelBase CurrentView { get; set; } = new();
+    public partial ViewModelBase CurrentView { get; set; } = new HomeViewModel();
 
     [RelayCommand]
     private void GoToHome() => CurrentView = new HomeViewModel();
