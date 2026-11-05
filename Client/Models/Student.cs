@@ -3,32 +3,13 @@ using System.Collections.Generic;
 
 namespace WestCoastEducationClient.Client.Models;
 
-public class Student : Person
+public class Student
 {
-    // Aggregation: en student har kurser, men kurserna finns kvar
-    // som egna objekt även om studenten tas bort.
-    public List<Course> Courses { get; } = [];
-
-    public Student(
-        string firstName,
-        string lastName,
-        string phone,
-        string personalNumber,
-        string address,
-        string postalCode,
-        string city
-    )
-    : base(firstName, lastName, phone, personalNumber, address, postalCode, city)
-    {
-    }
-
-    public bool AddCourse(Course course)
-    {
-        return AddCourseTo(Courses, course);
-    }
-
-    public override string GetInfo()
-    {
-        return base.GetInfo() + $", Number of Courses: {Courses.Count}";
-    }
+    public required string FirstName { get; set; }
+    public required string LastName { get; set; }
+    public required string PersonalNumber { get; set; }
+    public string? Phone { get; set; }
+    public string? Address { get; set; }
+    public string? PostalCode { get; set; }
+    public string? City { get; set; }
 }

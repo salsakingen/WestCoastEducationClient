@@ -2,23 +2,13 @@ using System;
 
 namespace WestCoastEducationClient.Client.Models;
 
-public class DistanceCourse : Course
+public class DistanceCourse
 {
-    public string MeetingLink { get; set; }
+    public string? MeetingLink { get; set; }
+    public string? CourseNumber { get; set; }
+    public string? Title { get; set; }
+    public int DurationDays { get; set; }
+    public DateTime StartDate { get; set; }
+    public DateTime EndDate { get; set; }
 
-    public DistanceCourse(
-        string courseNumber,
-        string title,
-        int durationDays,
-        DateTime startDate,
-        DateTime endDate,
-        string meetingLink)
-        : base(courseNumber, title, durationDays, startDate, endDate)
-    {
-        MeetingLink = meetingLink;
-    }
-    public override string GetInfo()
-    {
-        return base.GetInfo() + $", Distance, Link: {MeetingLink}";
-    }
 }

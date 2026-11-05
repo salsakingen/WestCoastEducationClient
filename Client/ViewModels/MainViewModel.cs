@@ -1,8 +1,5 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using WestCoastEducationClient.Client.ViewModels.Courses;
-using WestCoastEducationClient.Client.ViewModels.Student;
-using WestCoastEducationClient.Client.ViewModels.Teacher;
 
 namespace WestCoastEducationClient.Client.ViewModels;
 

@@ -2,23 +2,12 @@ using System;
 
 namespace WestCoastEducationClient.Client.Models;
 
-public class ClassroomCourse : Course
+public class ClassroomCourse
 {
-    public string Classroom { get; set; }
-
-    public ClassroomCourse(
-        string courseNumber,
-        string title,
-        int durationDays,
-        DateTime startDate,
-        DateTime endDate,
-        string classroom)
-        : base(courseNumber, title, durationDays, startDate, endDate)
-    {
-        Classroom = classroom;
-    }
-    public override string GetInfo()
-    {
-        return base.GetInfo() + $", Classroom: {Classroom}";
-    }
+    public string? Classroom { get; set; }
+    public string? CourseNumber { get; set; }
+    public string? Title { get; set; }
+    public int DurationDays { get; set; }
+    public DateTime StartDate { get; set; }
+    public DateTime EndDate { get; set; }
 }

@@ -1,6 +1,6 @@
 using System;
 
-namespace WestCoastEducationClient.Client.ViewModels.Courses;
+namespace WestCoastEducationClient.Client.ViewModels;
 
 public class CourseViewModel : ViewModelBase
 {
