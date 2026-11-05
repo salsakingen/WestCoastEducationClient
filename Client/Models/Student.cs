@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace WestCoastEducationClient.Client.Models;
 
-public class Student
+public record Student
 {
     public required string FirstName { get; set; }
     public required string LastName { get; set; }

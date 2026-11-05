@@ -1,9 +1,9 @@
 using System;
-using WestCoastEducationClient.Client.InterFace;
+
 
 namespace WestCoastEducationClient.Client.Models;
 
-public abstract class Course
+public record Course
 {
     public string? CourseNumber { get; set; }
     public string? Title { get; set; }

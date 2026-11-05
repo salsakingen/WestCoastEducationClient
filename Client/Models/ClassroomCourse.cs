@@ -2,7 +2,7 @@ using System;
 
 namespace WestCoastEducationClient.Client.Models;
 
-public class ClassroomCourse
+public record ClassroomCourse
 {
     public string? Classroom { get; set; }
     public string? CourseNumber { get; set; }

@@ -2,7 +2,7 @@ using System;
 
 namespace WestCoastEducationClient.Client.Models;
 
-public class DistanceCourse
+public record DistanceCourse
 {
     public string? MeetingLink { get; set; }
     public string? CourseNumber { get; set; }

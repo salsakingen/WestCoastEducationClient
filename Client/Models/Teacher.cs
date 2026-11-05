@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 
 namespace WestCoastEducationClient.Client.Models;
 
-public class Teacher 
+public record Teacher
 {
     public required string FirstName { get; set; }
     public required string LastName { get; set; }
