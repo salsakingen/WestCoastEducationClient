@@ -2,8 +2,8 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using WestCoastEducationClient.Client.ViewModels;
-using WestCoastEducationClient.Client.Views;
+using WestCoastEducationClient.ViewModels;
+using WestCoastEducationClient.Views;
 
 namespace WestCoastEducationClient;
 

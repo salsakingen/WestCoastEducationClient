@@ -1,11 +1,29 @@
 [
     {
-
+     "id":"alsdkjasdafasjhaksjdh",   
     "courseNumber": "COURSE-001",
-    "title": "Introduction to Programming",
+    "title": "Programming",
     "durationDays": 5,
-    "§startDate": "2023-10-01",
+    "startDate": "2023-10-01",
     "endDate": "2023-10-05"
+    
+},
+    {
+    "id": "alsdkjaasgfhsdjhaksjdh",
+    "courseNumber": "COURSE-002",
+    "title": "History",
+    "durationDays": 5,
+    "startDate": "2023-11-01",
+    "endDate": "2023-11-05"
+    
+},
+    {
+"id": "alsdkjadfgsdjhaksjdh",
+    "courseNumber": "COURSE-003",
+    "title": "Biologi",
+    "durationDays": 5,
+    "startDate": "2023-12-01",
+    "endDate": "2023-12-05"
     
 }
 ]

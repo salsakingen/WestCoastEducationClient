@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:WestCoastEducationClient.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="WestCoastEducationClient.Views.StudentView"
+             x:DataType="vm:StudentViewModel">
+  <Design.DataContext>
+    <vm:StudentViewModel></vm:StudentViewModel>
+  </Design.DataContext>
+
+  <StackPanel>
+    <TextBlock Text="Students" HorizontalAlignment="Center"></TextBlock>
+    <Border BorderBrush="Black" BorderThickness="0 0 0 1" Padding="0 50 5 0">
+      <Grid ColumnDefinitions="*,*,*" ShowGridLines="False">
+        <Label Grid.Column="0" Content="Firstname" />
+        <Label Grid.Column="1" Content="Lastname" />
+        <Label Grid.Column="2" Content="PersonalNumber"/>
+      </Grid>
+    </Border>
+    <ItemsControl ItemsSource="{Binding Students}">
+      <ItemsControl.ItemTemplate>
+        <DataTemplate>
+          <Grid ColumnDefinitions="*,*,*" ShowGridLines="False">
+            <Label Grid.Column="0" Content="{Binding FirstName}" />
+            <Label Grid.Column="1" Content="{Binding LastName}" />
+            <Label Grid.Column="2" Content="{Binding PersonalNumber}"/>
+          </Grid>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+  </StackPanel>
+</UserControl>

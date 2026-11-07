@@ -1,5 +1,6 @@
 [
     {
+        "id": "alskdjlaskjasddalfhlaksjdf",
     "firstName": "Sebbe",
     "lastName": "Svensson",
     "phone": "070-123 45 67",
@@ -7,5 +8,25 @@
     "address": "Storgatan 1",
     "postalCode": "123 45",
     "city": "Stockholm"
+    },
+    {
+        "id": "alskdjlaskjdalfhlgfaksjdf",
+    "firstName": "Gustav",
+    "lastName": "Coolio",
+    "phone": "070-123 45 67",
+    "personalNumber": "19900101-1111",
+    "address": "Storgatan 2",
+    "postalCode": "123 45",
+    "city": "falkenberg"
+    },
+    {
+        "id": "alskdjasdaskjdalfhlaksjdf",
+    "firstName": "Stefan",
+    "lastName": "Hero",
+    "phone": "070-123 45 67",
+    "personalNumber": "19900101-5555",
+    "address": "Storgatan 3",
+    "postalCode": "123 45",
+    "city": "helsingborg"
     }
 ]
