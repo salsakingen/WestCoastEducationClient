@@ -1,0 +1,46 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:teachers="clr-namespace:WestCoastEducationClient.ViewModels.Teachers"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="teachers:EditTeacherViewModel"
+             x:Class="WestCoastEducationClient.Views.Teachers.EditTeacherView">
+    <Grid>
+        <StackPanel>
+            <StackPanel>
+                <Label Content="First Name"></Label>
+                <TextBox Text="{Binding FirstName}" ></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Last Name"></Label>
+                <TextBox Text="{Binding LastName}" ></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Personal Number"></Label>
+                <TextBox Text="{Binding PersonalNumber}" ></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Phone Number"></Label>
+                <TextBox Text="{Binding PhoneNumber}" ></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Address"></Label>
+                <TextBox Text="{Binding Address}" ></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Postal Code"></Label>
+                <TextBox Text="{Binding PostalCode}" ></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Town"></Label>
+                <TextBox Text="{Binding Town}" ></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Knowledge Area"></Label>
+                <TextBox Text="{Binding KnowledgeArea}" ></TextBox>
+            </StackPanel>
+            <Button Content="Save" Command="{Binding SaveTeacherCommand}"></Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -74,10 +74,11 @@ public class JsonStorageService<T> : IHttpService<T> where T : class
         {
             var json = await File.ReadAllTextAsync(file);
             var item = JsonSerializer.Deserialize<T>(json, options);
+            Console.WriteLine(json);
             if (item != null)
                 result.Add(item);
         }
-
+        Console.WriteLine(result.Count);
         return result;
     }
 

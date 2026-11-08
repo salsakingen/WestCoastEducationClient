@@ -1,0 +1,53 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:vm="using:WestCoastEducationClient.ViewModels"
+             xmlns:courses="clr-namespace:WestCoastEducationClient.ViewModels.Courses"
+             x:Class="WestCoastEducationClient.Views.Courses.CourseView"
+             x:DataType="courses:CourseViewModel">
+    <Grid RowDefinitions="Auto,*">
+        <Grid Margin="0 0 0 20" ColumnDefinitions="*,*,*">
+            <TextBlock Grid.Column="1" Margin="10" Text="Courses" HorizontalAlignment="Center" />
+            <Button Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Add Course"
+                    Command="{Binding $parent[Window].((vm:MainViewModel)DataContext).GoToAddCourseCommand}">
+            </Button>
+        </Grid>
+        <StackPanel Grid.Row="1">
+            <Border Classes="gridBorder">
+                <Grid Margin="0,0,0,5" ColumnDefinitions="*,*,*,*,*">
+                    <Label Grid.Column="0" Content="Course Number" />
+                    <Label Grid.Column="1" Content="Title" />
+                    <Label Grid.Column="2" Content="Start Date" />
+                    <Label Grid.Column="3" Content="End Date" />
+                    <Label Grid.Column="4" Content="" />
+                </Grid>
+            </Border>
+            <ItemsControl ItemsSource="{Binding Courses}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,*,*,*,*">
+                            <Label Grid.Column="0" Content="{Binding CourseNumber }" />
+                            <Label Grid.Column="1" Content="{Binding  Title}" />
+                            <Label Grid.Column="2" Content="{Binding StartDate}" />
+                            <Label Grid.Column="3" Content="{Binding EndDate}">
+                            </Label>
+                            <StackPanel Grid.Column="4" Orientation="Horizontal">
+                                <Button Content="Edit"
+                                        Command="{Binding $parent[Window].((vm:MainViewModel)DataContext).GoToEditCourseCommand}"
+                                        CommandParameter="{Binding Id}" />
+                                <Button Classes="dangerAction" Content="Delete"
+                                        Command="{Binding $parent[UserControl].DataContext.DeleteCommand}"
+                                        CommandParameter="{Binding Id}">
+                                </Button>
+                               
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

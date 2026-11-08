@@ -6,10 +6,8 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="WestCoastEducationClient.Views.HomeView"
              x:DataType="vm:HomeViewModel">
-  <Design.DataContext>
-    <vm:HomeViewModel />
-  </Design.DataContext>
+ 
   <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-    <TextBlock  Foreground="White" Text="Welcome to West Coast Education Admin"  FontSize="24" />
+    <TextBlock Text="Welcome to West Coast Education Admin"  FontSize="24" />
   </StackPanel>
 </UserControl>

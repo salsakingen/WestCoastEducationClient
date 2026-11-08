@@ -1,11 +1,13 @@
 using System;
+using System.Text.Json.Serialization;
 
 
 namespace WestCoastEducationClient.Models;
 
-public record Course
+public class Course
 {
-    public string Id { get; set; } = Guid.NewGuid().ToString();
+    [JsonPropertyName("_id")]
+    public string? Id { get; set; }
     public string? CourseNumber { get; set; }
     public string? Title { get; set; }
     public int DurationDays { get; set; }

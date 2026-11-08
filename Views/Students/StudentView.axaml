@@ -1,0 +1,63 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:WestCoastEducationClient.ViewModels"
+             xmlns:students="clr-namespace:WestCoastEducationClient.ViewModels.Students"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="WestCoastEducationClient.Views.Students.StudentView"
+             x:DataType="students:StudentViewModel">
+
+
+    <Grid RowDefinitions="Auto,*">
+        <Grid Margin="0 0 0 20" ColumnDefinitions="*,*,*">
+            <TextBlock Grid.Column="1" Margin="10" Text="Students" HorizontalAlignment="Center" />
+            <Button Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Add Student"
+                    Command="{Binding $parent[Window].((vm:MainViewModel)DataContext).GoToAddStudentCommand}">
+            </Button>
+        </Grid>
+
+
+       <StackPanel Grid.Row="1">
+
+           <Border Classes="gridBorder">
+               <Grid Margin="0,0,0,5" ColumnDefinitions="*,*,*,*,*,*">
+                   <Label Grid.Column="0" Content="Firstname" />
+                   <Label Grid.Column="1" Content="Lastname" />
+                   <Label Grid.Column="2" Content="PersonalNumber" />
+                   <Label Grid.Column="3" Content="Phone Number" />
+                   <Label Grid.Column="4" Content="Address" />
+                   <Label Grid.Column="5" Content="" />
+
+               </Grid>
+           </Border>
+           <ItemsControl ItemsSource="{Binding Students}">
+               <ItemsControl.ItemTemplate>
+                   <DataTemplate>
+                       <Grid ColumnDefinitions="*,*,*,*,*,*">
+                           <Label Grid.Column="0" Content="{Binding FirstName}" />
+                           <Label Grid.Column="1" Content="{Binding LastName}" />
+                           <Label Grid.Column="2" Content="{Binding PersonalNumber}" />
+                           <Label Grid.Column="3" Content="{Binding PhoneNumber}" />
+                           <Label Grid.Column="4">
+                               <Label.Content>
+                                   <StackPanel>
+                                       <TextBlock Text="{Binding Address}"></TextBlock>
+                                       <TextBlock Text="{Binding PostalCode}"></TextBlock>
+                                       <TextBlock Text="{Binding Town}"></TextBlock>
+                                   </StackPanel>
+                               </Label.Content>
+                           </Label>
+                           <Button
+                               Classes="dangerAction"
+                               Grid.Column="5" Content="Delete"
+                                   Command="{Binding $parent[UserControl].DataContext.DeleteStudentCommand}"
+                                   CommandParameter="{Binding Id}">
+                           </Button>
+                       </Grid>
+                   </DataTemplate>
+               </ItemsControl.ItemTemplate>
+           </ItemsControl>
+       </StackPanel>
+    </Grid>
+</UserControl>

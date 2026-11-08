@@ -23,4 +23,31 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.14" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.14" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Course\AddCourseView.axaml.cs">
+      <DependentUpon>AddCourseView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Course\CourseView.axaml.cs">
+      <DependentUpon>CourseView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Student\AddStudentView.axaml.cs">
+      <DependentUpon>AddStudentView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Student\StudentView.axaml.cs">
+      <DependentUpon>StudentView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Teacher\TeacherView.axaml.cs">
+      <DependentUpon>TeacherView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Teacher\AddTeacherView.axaml.cs">
+      <DependentUpon>AddTeacherView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>

@@ -8,7 +8,7 @@ using WestCoastEducationClient.Models;
 
 namespace WestCoastEducationClient.Service;
 
-public class TeacherService
+public class TeacherService : IService<Teacher>
 {
 
     private readonly IHttpService<Teacher> _httpService = new HttpService<Teacher>();
@@ -36,8 +36,7 @@ public class TeacherService
 
         try
         {
-            await _httpService.Delete("teachers", id);
-            await _httpService.Post("teachers", obj);
+            await _httpService.Put("teachers", obj, id!);
         }
         catch (System.Exception ex)
         {
@@ -48,7 +47,7 @@ public class TeacherService
 
     }
 
-    async Task Post(Teacher obj)
+    public async Task Post(Teacher obj)
     {
         await _httpService.Post("teachers", obj);
 

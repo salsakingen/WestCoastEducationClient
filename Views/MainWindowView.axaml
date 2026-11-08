@@ -8,29 +8,25 @@
         x:DataType="vm:MainViewModel"
         Title="WestCoastEducationClient">
 
-    <Design.DataContext>
-        <vm:MainViewModel/>
-    </Design.DataContext>
-
-    <Grid ColumnDefinitions="Auto,*">
-        <Border Grid.Column="0" Padding="10" Background="Blue">
+    <Grid Background="{DynamicResource Background}" ColumnDefinitions="Auto,*">
+        <Border Grid.Column="0" Padding="10">
             <StackPanel Spacing="10">
                 <Button Command="{Binding GoToHomeCommand}">
                     <StackPanel Orientation="Horizontal" Spacing="10">
                         <Label Content="Home" Foreground="White" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
                 </Button>
-                <Button Background="Purple" Command="{Binding GoToTeacherCommand}">
+                <Button Background="{DynamicResource ButtonPrimary}" Command="{Binding GoToTeacherCommand}">
                     <StackPanel Orientation="Horizontal" Spacing="10">
                         <Label Content="Teacher" Foreground="White" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
                 </Button>
-                <Button Background="Green" Command="{Binding GoToStudentCommand}">
+                <Button Background="{DynamicResource ButtonPrimary}" Command="{Binding GoToStudentCommand}">
                     <StackPanel Orientation="Horizontal" Spacing="10">
                         <Label Content="Student" Foreground="White" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
                 </Button>
-                <Button Background="Orange" Command="{Binding GoToCoursesCommand}">
+                <Button Background="{DynamicResource ButtonPrimary}" Command="{Binding GoToCoursesCommand}">
                     <StackPanel Orientation="Horizontal" Spacing="10">
                         <Label Content="Courses" Foreground="White" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>

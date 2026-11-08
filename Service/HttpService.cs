@@ -20,7 +20,8 @@ public class HttpService<T> : IHttpService<T> where T : class
     {
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-        WriteIndented = true
+        WriteIndented = true,
+        PropertyNameCaseInsensitive = true
     };
     public HttpService()
     {
@@ -56,18 +57,27 @@ public class HttpService<T> : IHttpService<T> where T : class
         var response = await _httpClient.GetAsync($"{_baseUrl}{resource}");
 
         var result = await response.Content.ReadAsStringAsync();
-        Console.WriteLine(result);
+        Console.WriteLine($"{(int)response.StatusCode} {resource}: {result}");
+            List<T> data = [];
+            try
+            {
+                data = JsonSerializer.Deserialize<List<T>>(result, _options) ?? [];
 
-        var list = JsonSerializer.Deserialize<List<T>>(result, _options) ?? [];
-        return list;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        Console.WriteLine($"Object Count: {data.Count}");
+        return data;
     }
 
 
-    public async Task<T> Get(string resource, string predicate)
+    public async Task<T> Get(string resource, string id)
     {
         try
         {
-            var response = await _httpClient.GetAsync($"{_baseUrl}{resource}?q={predicate}");
+            var response = await _httpClient.GetAsync($"{_baseUrl}{resource}/{id}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -77,8 +87,8 @@ public class HttpService<T> : IHttpService<T> where T : class
                     throw new Exception("Fanns ingenting");
                 }
 
-                var data = JsonSerializer.Deserialize<List<T>>(result, _options)!;
-                return data[0];
+                var data = JsonSerializer.Deserialize<T>(result, _options)!;
+                return data;
             }
             else
             {
@@ -95,7 +105,9 @@ public class HttpService<T> : IHttpService<T> where T : class
         try
         {
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            await _httpClient.PostAsJsonAsync<T>($"{_baseUrl}/{resource}", data);
+            var result = await _httpClient.PostAsJsonAsync<T>($"{_baseUrl}/{resource}", data);
+            var resultstring = await result.Content.ReadAsStringAsync();
+            Console.WriteLine("Result: " + resultstring );
         }
         catch (Exception ex)
         {

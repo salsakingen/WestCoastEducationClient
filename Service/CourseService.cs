@@ -6,10 +6,10 @@ using WestCoastEducationClient.Models;
 
 namespace WestCoastEducationClient.Service
 {
-    public class CourseService
+    public class CourseService : IService<Course>
     {
 
-        private readonly IHttpService<Course> _httpService = new HttpService<Course>();
+        private readonly IHttpService<Course> _httpService = new  HttpService<Course>();
         public async Task<Course?> Get(string id)
         {
             Course? _course = null;
@@ -31,11 +31,11 @@ namespace WestCoastEducationClient.Service
         public async Task Put(Course obj)
         {
             string id = obj.Id;
-
+            
             try
             {
-                await _httpService.Delete("courses", id);
-                await _httpService.Post("courses", obj);
+                await _httpService.Put("courses", obj, id!);
+                
             }
             catch (System.Exception ex)
             {
@@ -46,7 +46,7 @@ namespace WestCoastEducationClient.Service
 
         }
 
-        async Task Post(Course obj)
+        public async Task Post(Course obj)
         {
             await _httpService.Post("courses", obj);
 

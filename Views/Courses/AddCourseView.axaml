@@ -1,0 +1,30 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:courses="clr-namespace:WestCoastEducationClient.ViewModels.Courses"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="WestCoastEducationClient.Views.Courses.AddCourseView"
+             x:DataType="courses:AddCourseViewModel">
+    <Grid>
+        <StackPanel>
+            <StackPanel>
+                <Label Content="Course Number"></Label>
+                <TextBox Text="{Binding CourseNumber}" ></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Title"></Label>
+                <TextBox Text="{Binding Title}" ></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Start Date"></Label>
+                <DatePicker SelectedDate="{Binding StartDate}" ></DatePicker>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Start Date"></Label>
+                <DatePicker SelectedDate="{Binding EndDate}" ></DatePicker>
+            </StackPanel>
+            <Button Content="Save" Command="{Binding AddCourseCommand}"></Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
